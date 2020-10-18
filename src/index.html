@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">-->
+  <script src="https://kit.fontawesome.com/3000785c42.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="estilo.css">
+  <title>VipSoftware</title>
+</head>
+
+<body>
+  <div class="conteiner">
+    <div id="coluna">
+      <button onclick="google()"><i class="fab fa-google"></i></button>
+      <button onclick="instagram()"><i class="fab fa-instagram"></i></button>
+      <button onclick="telegram()"><i class="fab fa-telegram"></i></button>
+      <button onclick="whatsapp()"><i class="fab fa-whatsapp"></i></button>
+      <button onclick="twitter()"><i class="fab fa-twitter"></i></button>
+      <button onclick="bet()" oncontextmenu="menuBet()"><i class="fas fa-home"></i></button>
+      <button onclick="p4f()" oncontextmenu="menup4f()"><i class="fas fa-wallet"></i></button>
+      <button onclick="flashcore()" oncontextmenu="menuFlashcore()"><i class="fas fa-futbol"></i></button>
+      <button onclick="calculadora()"><i class="fas fa-calculator"></i></button>
+      <button onclick="conversor()"><i class="fas fa-search-dollar"></i></button>
+    </div>
+    <div id="nome">VIPSOCCERPRO</div>
+    <div class="conteiner2">
+      <div id='touchbar'>
+        <button id="botão-touchbar" onclick="voltar()"><i class="fas fa-arrow-left"></i></button>
+        <button id="botão-touchbar-undo" onclick="reload()"><i class="fas fa-undo"></i></i></button>
+        <button id="botão-touchbar-times" onclick="fechar()"><i class="fas fa-times"></i></button>
+      </div>
+      <webview id="foo" src="https://google.com"
+        useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36 OPR/71.0.3770.148">
+      </webview>
+    </div>
+    <div id='menu-p4f'>
+      <button id='menuBTN' onclick="p4fDepositar()">Depositar</button>
+      <button id='menuBTN' onclick="p4fSacar()">sacar</button>
+      <button id='menuBTN' onclick="p4fTransfe()">transferir</button>
+      <button id='menuBTN' onclick='p4fSaldo()'>saldo</button>
+      <button onclick='fecharMenu()'><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id='menu-flashcore'>
+      <button id='menuBTN' onclick="flashcoreAoVivo()">Ao Vivo</button>
+      <button id='menuBTN'>Meus Jogos</button>
+      <button onclick='fecharMenu()'><i class="fas fa-times"></i></button>
+    </div>
+
+    <div id='menu-bet'>
+      <button id='menuBTN' onclick="betFutebol()">Futebol</button>
+      <button id='menuBTN' onclick="betAovivo()">Ao vivo</button>
+      <button id='menuBTN' onclick="betApostas()">Minhas Apostas</button>
+      <button onclick='fecharMenu()'><i class="fas fa-times"></i></button>
+    </div>
+  </div>
+
+  <div id="notification" class="hidden">
+    <p id="message"></p>
+    <button id="close-button" onClick="closeNotification()">
+      Close
+    </button>
+    <button id="restart-button" onClick="restartApp()" class="hidden">
+      Restart
+    </button>
+  </div>
+
+  <!-- You can also require other files to run in this process useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36 OPR/71.0.3770.148"   -->
+  <script src="./renderer.js"></script>
+  <script type="text/javascript" src="pace.min.js"></script>
+</body>
+
+</html>

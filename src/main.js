@@ -1,57 +1,12 @@
-// This is free and unencumbered software released into the public domain.
-// See LICENSE for details
-
 const {app, BrowserWindow, Menu, protocol, ipcMain} = require('electron');
 const log = require('electron-log');
+const path = require('path');
 const {autoUpdater} = require("electron-updater");
 
-//-------------------------------------------------------------------
-// Logging
-//
-// THIS SECTION IS NOT REQUIRED
-//
-// This logging setup is not required for auto-updates to work,
-// but it sure makes debugging easier :)
-//-------------------------------------------------------------------
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
 
-//-------------------------------------------------------------------
-// Define the menu
-//
-// THIS SECTION IS NOT REQUIRED
-//-------------------------------------------------------------------
-let template = []
-if (process.platform === 'darwin') {
-  // OS X
-  const name = app.getName();
-  template.unshift({
-    label: name,
-    submenu: [
-      {
-        label: 'About ' + name,
-        role: 'about'
-      },
-      {
-        label: 'Quit',
-        accelerator: 'Command+Q',
-        click() { app.quit(); }
-      },
-    ]
-  })
-}
-
-
-//-------------------------------------------------------------------
-// Open a window that displays the version
-//
-// THIS SECTION IS NOT REQUIRED
-//
-// This isn't required for auto-updates to work, but it's easier
-// for the app to show a window than to have to click "About" to see
-// that updates are working.
-//-------------------------------------------------------------------
 let win;
 
 function sendStatusToWindow(text) {
@@ -59,12 +14,29 @@ function sendStatusToWindow(text) {
   win.webContents.send('message', text);
 }
 function createDefaultWindow() {
-  win = new BrowserWindow();
-  win.webContents.openDevTools();
+  win = new BrowserWindow({
+    width: 1080,
+    height: 720,
+    'minWidth': 600,
+    'minHeight': 400,
+    show: false,
+    icon: path.join(__dirname, '../assets/icon.png'),
+    webPreferences: {
+      nativeWindowopen: true,
+      webviewTag: true,
+      nodeIntegration: true,
+      contextIsolation: false
+    }
+  });
+  win.once('ready-to-show',()=>{
+    win.show();
+  })
+  win.setMenuBarVisibility(false)
   win.on('closed', () => {
     win = null;
   });
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
+  //win.loadFile('./index.html')
+  win.loadURL(`file://${__dirname}/index.html`);
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
@@ -88,13 +60,13 @@ autoUpdater.on('download-progress', (progressObj) => {
 autoUpdater.on('update-downloaded', (info) => {
   sendStatusToWindow('Update downloaded');
 });
-app.on('ready', function() {
-  // Create the Menu
-  const menu = Menu.buildFromTemplate(template);
-  Menu.setApplicationMenu(menu);
+app.whenReady().then(() => {
+  createDefaultWindow()
 
-  createDefaultWindow();
-});
+  app.on('activate', function () {
+    if (BrowserWindow.getAllWindows().length === 0) createDefaultWindow()
+  })
+})
 app.on('window-all-closed', () => {
   app.quit();
 });
@@ -113,6 +85,10 @@ app.on('ready', function()  {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
+
+ipcMain.on('app_version', (event) => {
+  event.sender.send('app_version', { version: app.getVersion() });
+});
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
 //
