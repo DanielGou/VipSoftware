@@ -11,7 +11,7 @@ let win;
 
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send('message', text);
+  console.log('message', text);
 }
 function createDefaultWindow() {
   win = new BrowserWindow({

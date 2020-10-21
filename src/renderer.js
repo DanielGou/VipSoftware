@@ -110,4 +110,3 @@ ipcRenderer.on('app_version', (event, arg) => {
     ipcRenderer.removeAllListeners('app_version');
     version.innerText += ' ' + arg.version;
 });
-
