@@ -1,4 +1,3 @@
-var webview = document.getElementById('foo')
 function instagram(){
     document.getElementById('foo').src = 'https://www.instagram.com/?hl=pt-br';
 }
@@ -84,6 +83,8 @@ function calculadora(){
     window.open(src="calculadora/calculadora.html", 'Calculadora',"minWidth=false, minHeight=false, width=240, height=360")
 }
 
+var webview = document.getElementById('foo')
+
 function reload(){
     webview.reload()
 }
@@ -110,11 +111,3 @@ ipcRenderer.on('app_version', (event, arg) => {
     version.innerText += ' ' + arg.version;
 });
 
-// Listen for messages
-const {ipcRenderer} = require('electron');
-ipcRenderer.on('message', function(event, text) {
-  var container = document.getElementById('messages');
-  var message = document.createElement('div');
-  message.innerHTML = text;
-  container.appendChild(message);
-})
