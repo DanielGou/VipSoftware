@@ -20,7 +20,7 @@ function createDefaultWindow() {
     'minWidth': 600,
     'minHeight': 400,
     show: false,
-    icon: path.join(__dirname, '../assets/icon.png'),
+    icon: path.join(__dirname + '../assets/icon.png'),
     webPreferences: {
       nativeWindowopen: true,
       webviewTag: true,
