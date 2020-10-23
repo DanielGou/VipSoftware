@@ -1,13 +1,13 @@
 {
   "name": "vipsoftware",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "src/main.js",
   "description": "project by VipSoccerpro",
   "author": "Daniel Goulart",
   "scripts": {
     "start": "electron .",
-    "publish": "build --win --linux -p always",
-    "pack": "electron-builder --win --publish never"
+    "publish": "build --win --linux --icon=assets/icon.ico -p always",
+    "pack": "electron-builder --win --icon=assets/icon.ico --publish never"
   },
   "devDependencies": {
     "electron": "^10.1.3",
