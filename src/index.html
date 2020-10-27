@@ -18,7 +18,6 @@
       <button onclick="instagram()"><i class="fab fa-instagram"></i></button>
       <button onclick="telegram()"><i class="fab fa-telegram"></i></button>
       <button onclick="whatsapp()"><i class="fab fa-whatsapp"></i></button>
-      <button onclick="twitter()"><i class="fab fa-twitter"></i></button>
       <button onclick="bet()" oncontextmenu="menuBet()"><i class="fas fa-home"></i></button>
       <button onclick="p4f()" oncontextmenu="menup4f()"><i class="fas fa-wallet"></i></button>
       <button onclick="flashcore()" oncontextmenu="menuFlashcore()"><i class="fas fa-futbol"></i></button>
@@ -32,9 +31,7 @@
         <button id="botão-touchbar-undo" onclick="reload()"><i class="fas fa-undo"></i></i></button>
         <button id="botão-touchbar-times" onclick="fechar()"><i class="fas fa-times"></i></button>
       </div>
-      <webview id="foo" src="https://google.com"
-        useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36 OPR/71.0.3770.148">
-      </webview>
+      <webview id="foo" src="https://google.com"></webview>
     </div>
     <div id='menu-p4f'>
       <button id='menuBTN' onclick="p4fDepositar()">Depositar</button>
@@ -57,9 +54,6 @@
       <button onclick='fecharMenu()'><i class="fas fa-times"></i></button>
     </div>
   </div>
-
-  <div id="messages"></div>
-
   <!-- You can also require other files to run in this process useragent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36 OPR/71.0.3770.148"   -->
   <script src="./renderer.js"></script>
   <script type="text/javascript" src="pace.min.js"></script>

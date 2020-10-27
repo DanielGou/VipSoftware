@@ -22,10 +22,9 @@ function createDefaultWindow() {
     show: false,
     icon: path.join(__dirname, '../assets/icon.png'),
     webPreferences: {
-      nativeWindowopen: true,
       webviewTag: true,
       nodeIntegration: true,
-      contextIsolation: false
+      worldSafeExecuteJavaScript: true
     }
   });
   win.once('ready-to-show',()=>{

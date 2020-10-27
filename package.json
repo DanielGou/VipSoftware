@@ -1,6 +1,6 @@
 {
   "name": "vipsoftware",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "main": "src/main.js",
   "description": "project by VipSoccerpro",
   "author": "Daniel Goulart",
@@ -29,12 +29,11 @@
     ],
     "win": {
       "target": "nsis",
-      "icon": "./assets/icon.ico"
-      
-    }, 
-    "linux":{
+      "icon": "assets/icon.png"
+    },
+    "linux": {
       "target": "AppImage",
-      "icon": "./assets/icon.ico"
+      "icon": "assets/icon.png"
     }
   }
 }

@@ -1,13 +1,13 @@
 function instagram(){
-    document.getElementById('foo').src = 'https://www.instagram.com/?hl=pt-br';
+    webview.loadURL("https://www.instagram.com/?hl=pt-br")
 }
 
 function google(){
-    document.getElementById('foo').src = 'https://google.com'
+    webview.loadURL('http://google.com');
 }
 
 function flashcore(){
-    document.getElementById('foo').src = 'https://www.flashscore.com.br'
+    webview.loadURL("https://www.flashscore.com.br/")
 }
 function menuFlashcore(){
     fecharMenu()
@@ -15,44 +15,40 @@ function menuFlashcore(){
     document.getElementById('menu-flashcore').style.marginLeft= '60px'
 }
 function flashcoreAoVivo(){
-    document.getElementById('foo').src = 'https://www.flashscore.com.br'
+    webview.loadURL('https://www.flashscore.com.br/')
     fecharMenu()
 }
 
 function telegram(){
-    document.getElementById('foo').src = 'https://web.telegram.org/#/login'
+    webview.loadURL("https://web.telegram.org/#/login")
 }
 
 function whatsapp(){
-    document.getElementById('foo').src = 'https://web.whatsapp.com/'
-}
-
-function twitter(){
-    document.getElementById('foo').src = 'https://twitter.com'
+    webview.loadURL('https://web.whatsapp.com/')
 }
 
 function bet(){
-    document.getElementById('foo').src = 'https://br.1xbet.com/pt/'
+    webview.loadURL('https://br.1xbet.com/pt/')
 }
 function menuBet(){
     fecharMenu()
     document.getElementById('menu-bet').style.marginLeft = '60px'
 }
 function betFutebol(){
-    document.getElementById('foo').src = 'https://br.1xbet.com/pt/line/Football/'
+    webview.loadURL('https://br.1xbet.com/pt/line/Football/')
     fecharMenu()
 }
 function betAovivo(){
-    document.getElementById('foo').src = 'https://br.1xbet.com/pt/live/Football/'
+    webview.loadURL('https://br.1xbet.com/pt/live/Football/')
     fecharMenu()
 }
 function betApostas(){
-    document.getElementById('foo').src = 'https://br.1xbet.com/pt/office/history/'
+    webview.loadURL('https://br.1xbet.com/pt/office/history/')
     fecharMenu()
 }
 
 function p4f(){
-    document.getElementById('foo').src = 'https://p4f.com/'
+    webview.loadURL('https://p4f.com/')
 }
 function menup4f(){
     fecharMenu()
@@ -60,19 +56,19 @@ function menup4f(){
     document.getElementById('menu-p4f').style.marginLeft = '60px'
 }
 function p4fDepositar(){
-    document.getElementById('foo').src = 'https://p4f.com/MoneyIn/MoneyIn'
+    webview.loadURL('')
     fecharMenu()
 }
 function p4fSaldo(){
-    document.getElementById('foo').src = 'https://p4f.com/MyAccount/BalanceDetailed'
+    webview.loadURL('https://p4f.com/MyAccount/BalanceDetailed')
     fecharMenu()
 }
 function p4fSacar(){
-    document.getElementById('foo').src = 'https://p4f.com/MoneyOut/MoneyOut'
+    webview.loadURL('https://p4f.com/MoneyOut/MoneyOut')
     fecharMenu()
 }
 function p4fTransfe(){
-    document.getElementById('foo').src = 'https://p4f.com/Transfer/Transfer'
+    webview.loadURL('https://p4f.com/Transfer/Transfer')
     fecharMenu()
 }
 
