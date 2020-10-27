@@ -76,7 +76,7 @@ function conversor(){
     open(src="moedas/moedas.html", 'Conversor de moedas', 'minWidht=false, minHeight=false, width=1000, height= 400')
 }
 function calculadora(){
-    window.open(src="calculadora/calculadora.html", 'Calculadora',"minWidth=false, minHeight=false, width=240, height=360")
+    window.open(src="calculadora/calculadora.html", 'Calculadora',"minWidth=false, minHeight=false, width=250, height=370")
 }
 
 var webview = document.getElementById('foo')
